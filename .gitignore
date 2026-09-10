@@ -11,5 +11,5 @@ htmlcov/
 qdrant_storage/
 *.log
 .DS_Store
-data/*.pdf
+# data/*.pdf
 !data/.gitkeep
