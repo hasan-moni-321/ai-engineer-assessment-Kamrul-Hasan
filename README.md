@@ -65,7 +65,7 @@ All model names are configuration values. If a model is unavailable to your Open
 
   ### 2.5) create python virtual environment     
   ```bash
-  python -m venv .venv  
+  python3 -m venv .venv  
   source .venv/bin/activate  
   ```  
 
