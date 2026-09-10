@@ -115,7 +115,7 @@ All model names are configuration values. If a model is unavailable to your Open
 ![Alt text](images/Abomination_1.png)
 ![Alt text](images/Abomination_2.png)
 ![Alt text](images/Abomination_3.png)
-![Alt text](images/Abomination_4.png)
+![Alt text](images/Abomination_4.png) 
 
 ### 3.2) For "Docker" (my own database)  
 ![Alt text](images/Docker_1.png)
