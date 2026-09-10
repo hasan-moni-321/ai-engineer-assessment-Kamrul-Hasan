@@ -40,44 +40,72 @@ All model names are configuration values. If a model is unavailable to your Open
 
 
 ## 2. How to run the Application  
-  i) Clone the repository using    
+  ### 2.1) Clone the repository using    
+  ```bash
   git clone https://github.com/hasan-moni-321/ai-engineer-assessment-Kamrul-Hasan.git  
+  ```  
 
-  ii) go to the main project folder using     
-  cd ai-engineer-assessment-Kamrul-Hasan
+  ### 2.2) go to the main project folder using     
+  ```bash
+  cd ai-engineer-assessment-Kamrul-Hasan  
+  ```
 
-  iii) copy .env.example using    
-  cp .env.example .env
+  ### 2.3) copy .env.example using    
+  ```bash
+  cp .env.example .env  
+  ```
 
-  iv) Put your credentials in .env    
+  ### 2.4) Put your credentials in .env    
+  ```bash
   OPENAI_API_KEY=your_openai_key  
-  SUPERHERO_API_TOKEN=your_superhero_token
+  ```  
+  ```bash
+  SUPERHERO_API_TOKEN=your_superhero_token  
+  ```
 
-  v) create python virtual environment     
+  ### 2.5) create python virtual environment     
+  ```bash
   python -m venv .venv  
   source .venv/bin/activate  
+  ```  
 
-  vi) Install dependencies    
-  pip install -U pip    
-  pip install -e ".[dev]"    
+  ### 2.6) Install dependencies    
+  ```bash
+  pip install -U pip  
+  ```    
+  ```bash
+  pip install -e ".[dev]"  
+  ```    
   
-  vii) Install Qdrant  
-  docker compose up -d qdrant    
+  ### 2.7) Install Qdrant  
+  ```bash
+  docker compose up -d qdrant  
+  ```    
 
-  viii) Ingest the PDF:    
-  python -m backend.ingestion.ingest --pdf data/docker_kubernetes_dataset.pdf     
+  ### 2.8) Ingest the PDF:    
+  ```bash
+  python -m backend.ingestion.ingest --pdf data/docker_kubernetes_dataset.pdf  
+  ```
 
-  ix) Start FastAPI:    
-  uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000   
+  ### 2.9) Start FastAPI:    
+  ```bash
+  uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
+  ```   
   
-  x) Then start Flask in another terminal:     
+  ### 2.10) Then start Flask in another terminal:     
+  ```bash
   python frontend/app.py  
+  ```
 
-  xi) Open a browser and paste below url     
+  ### 2.11) Open a browser and paste below url     
+  ```bash
   http://localhost:5000  
+  ```
 
-  xii)  for API documentation paster below url in a new browser tab     
+  ### 2.12)  for API documentation paste below url in a new browser tab     
+  ```bash
   http://localhost:8000/docs  
+  ```
 
 ## 2. Configuration
 
