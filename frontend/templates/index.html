@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Engineer Assessment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>AI Engineering Assistant</h1>
+      <p class="subtitle">Docker/Kubernetes RAG + Superhero API</p>
+
+      <form id="chat-form">
+        <textarea
+          id="question"
+          name="question"
+          rows="5"
+          maxlength="4000"
+          placeholder="Ask about Docker, Kubernetes, superheroes, or both..."
+          required
+        ></textarea>
+        <button type="submit">Ask</button>
+      </form>
+
+      <div id="status" class="status"></div>
+
+      <section id="answer" class="answer hidden">
+        <h2>Answer</h2>
+        <div id="answer-text"></div>
+
+        <h3>Route</h3>
+        <pre id="route"></pre>
+
+        <h3>Sources</h3>
+        <div id="sources"></div>
+
+        <h3>Metadata</h3>
+        <pre id="metadata"></pre>
+      </section>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

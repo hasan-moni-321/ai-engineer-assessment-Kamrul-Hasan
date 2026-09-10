@@ -1,0 +1,20 @@
+{
+  "project": "ai-engineer-assessment",
+  "backend": "FastAPI",
+  "frontend": "Flask",
+  "router_model": "gpt-5.6-luna",
+  "answer_model": "gpt-5.6-terra",
+  "embedding_model": "text-embedding-3-large",
+  "vector_database": "Qdrant",
+  "chunking": {
+    "target_tokens": 500,
+    "min_tokens": 200,
+    "max_tokens": 800,
+    "overlap_tokens": 75
+  },
+  "retrieval": {
+    "top_k": 8,
+    "final_context_k": 5,
+    "score_threshold": 0.35
+  }
+}
