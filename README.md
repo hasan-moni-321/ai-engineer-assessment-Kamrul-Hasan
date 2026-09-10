@@ -112,25 +112,15 @@ All model names are configuration values. If a model is unavailable to your Open
 ## 3. Some Screenshot
 
 ### 3.1) For "Abomination" (super hero example)
-
 ![Alt text](images/Abomination_1.png)
-
 ![Alt text](images/Abomination_2.png)
-
 ![Alt text](images/Abomination_3.png)
+![Alt text](images/Abomination_4.png)
 
-![Alt text](images/Abomination_4.png)  
-  
 ### 3.2) For "Docker" (my own database)  
-
 ![Alt text](images/Docker_1.png)
-
 ![Alt text](images/Docker_2.png)
-
 ![Alt text](images/Docker_3.png)
-
-
-
 
 
 ## 3. Run everything with Docker Compose
