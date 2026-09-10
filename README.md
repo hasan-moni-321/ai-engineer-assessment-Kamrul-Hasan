@@ -84,7 +84,7 @@ All model names are configuration values. If a model is unavailable to your Open
 
   ### 2.8) Ingest the PDF:    
   ```bash
-  python -m backend.ingestion.ingest --pdf data/docker_kubernetes_dataset.pdf  
+  python3 -m backend.ingestion.ingest --pdf data/docker_kubernetes_dataset.pdf  
   ```
 
   ### 2.9) Start FastAPI:    
@@ -94,7 +94,7 @@ All model names are configuration values. If a model is unavailable to your Open
   
   ### 2.10) Then start Flask in another terminal:     
   ```bash
-  python frontend/app.py  
+  python3 frontend/app.py  
   ```
 
   ### 2.11) Open a browser and paste below url     
