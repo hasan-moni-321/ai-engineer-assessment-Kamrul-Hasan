@@ -38,11 +38,46 @@ All model names are configuration values. If a model is unavailable to your Open
 - Superhero API token
 - `docker_kubernetes_dataset.pdf`
 
-Put the dataset here:
 
-```text
-data/docker_kubernetes_dataset.pdf
-```
+## 2. How to run the Application
+  i) Clone the repository using 
+  git clone https://github.com/hasan-moni-321/ai-engineer-assessment-Kamrul-Hasan.git  
+
+  ii) go to the main project folder using 
+  cd ai-engineer-assessment-Kamrul-Hasan
+
+  iii) copy .env.example using
+  cp .env.example .env
+
+  iv) Put your credentials in .env  
+  OPENAI_API_KEY=your_openai_key
+  SUPERHERO_API_TOKEN=your_superhero_token
+
+  v) create python virtual environment 
+  python -m venv .venv
+  source .venv/bin/activate
+
+  vi) Install dependencies
+  pip install -U pip
+  pip install -e ".[dev]"
+  
+  vii) Install Qdrant
+  docker compose up -d qdrant
+
+  viii) Ingest the PDF:
+  python -m backend.ingestion.ingest --pdf data/docker_kubernetes_dataset.pdf 
+
+  ix) Start FastAPI:
+  uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000 
+  
+  x) Then start Flask in another terminal: 
+  python frontend/app.py
+
+  xi) Open a browser and paste below url 
+  http://localhost:5000
+
+  xii)  for API documentation paster below url in a new browser tab 
+  http://localhost:8000/docs
 
 ## 2. Configuration
 
