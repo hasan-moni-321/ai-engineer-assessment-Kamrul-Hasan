@@ -107,101 +107,12 @@ All model names are configuration values. If a model is unavailable to your Open
   http://localhost:8000/docs  
   ```
 
-## 2. Configuration
 
-```bash
-cp .env.example .env
-```
 
-Set at minimum:
 
-```env
-OPENAI_API_KEY=...
-SUPERHERO_API_TOKEN=...
-```
 
-The Superhero API endpoint is:
 
-```text
-/api/{token}/search/{name}
-```
-
-as specified by the assessment.
-
-## 3. Start local infrastructure
-
-```bash
-docker compose up -d qdrant
-```
-
-Qdrant will be available at:
-
-```text
-http://localhost:6333
-```
-
-## 4. Install Python dependencies
-
-Recommended:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -U pip
-pip install -e ".[dev]"
-```
-
-## 5. Ingest the PDF
-
-```bash
-python -m backend.ingestion.ingest --pdf data/docker_kubernetes_dataset.pdf
-```
-
-This pipeline:
-
-1. extracts PDF pages with PyMuPDF
-2. detects headings/sections
-3. creates section-aware chunks
-4. generates OpenAI embeddings
-5. creates/updates a Qdrant collection
-6. upserts vectors + metadata
-
-Do not run ingestion on every API request.
-
-## 6. Run backend
-
-```bash
-uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-Docs:
-
-```text
-http://localhost:8000/docs
-```
-
-Health:
-
-```text
-http://localhost:8000/health/live
-http://localhost:8000/health/ready
-```
-
-## 7. Run frontend
-
-In another terminal:
-
-```bash
-python frontend/app.py
-```
-
-Open:
-
-```text
-http://localhost:5000
-```
-
-## 8. Run everything with Docker Compose
+## 3. Run everything with Docker Compose
 
 After placing the PDF in `data/`:
 
@@ -221,7 +132,7 @@ Frontend:
 http://localhost:5000
 ```
 
-## 9. Example API request
+## 4. Example API request
 
 ```bash
 curl -X POST http://localhost:8000/api/v1/ask \
@@ -237,7 +148,7 @@ curl -X POST http://localhost:8000/api/v1/ask \
   -d '{"question":"Compare Kubernetes self-healing with Wolverine regeneration."}'
 ```
 
-## 10. Architecture
+## 5. Architecture
 
 ```text
 Browser
@@ -286,7 +197,7 @@ OpenAI embeddings
 Qdrant
 ```
 
-## 11. Retrieval defaults
+## 6. Retrieval defaults
 
 ```env
 CHUNK_TARGET_TOKENS=500
@@ -301,7 +212,7 @@ RAG_SCORE_THRESHOLD=0.35
 
 These are starting points. Tune them using the evaluation dataset.
 
-## 12. Tests
+## 7. Tests
 
 ```bash
 pytest
@@ -320,7 +231,7 @@ ruff check .
 ruff format --check .
 ```
 
-## 13. Production deployment
+## 8. Production deployment
 
 For production:
 
@@ -336,7 +247,7 @@ For production:
 
 The application itself remains stateless so the backend can scale horizontally.
 
-## 14. Assessment compatibility
+## 9. Assessment compatibility
 
 The assessment explicitly requires:
 
